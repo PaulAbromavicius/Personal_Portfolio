@@ -1,4 +1,9 @@
-const experiences = [
+import { useState } from "react";
+import { Button } from "./ui/button";
+
+type ExperienceType = "work" | "studies";
+
+const workExperiences = [
   {
     company: "Digital Perspective",
     role: "Frontend Web Developer",
@@ -22,11 +27,57 @@ const experiences = [
   }
 ];
 
+const studyExperiences = [
+  {
+    company: "Polytechnic of Leiria",
+    role: "B.Sc. in Computer Science",
+    period: "Sep 2020 - Jul 2025",
+    description: "Computer Science Degree",
+    logo: "/placeholder.svg"
+  },
+  {
+    company: "Zagreb University of Applied Sciences",
+    role: "B.Sc. in Computer Science",
+    period: "Mar 2022 - Jul 2022",
+    description: "Computer Science Exchange Program",
+    logo: "/placeholder.svg"
+  },
+  {
+    company: "Escola Secundária Raul Proença",
+    role: "Technical Professional of Management and Programming of Computer Systems",
+    period: "Sep 2017 - Jul 2020",
+    description: "Technical Professional Course",
+    logo: "/placeholder.svg"
+  }
+];
+
 const Experience = () => {
+  const [activeTab, setActiveTab] = useState<ExperienceType>("work");
+
+  const experiences = activeTab === "work" ? workExperiences : studyExperiences;
+
   return (
-    <section className="py-20">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Experience</h2>
+        <h2 className="text-3xl font-bold mb-8 text-white">Experience</h2>
+        
+        <div className="flex gap-4 mb-8 justify-center">
+          <Button
+            variant={activeTab === "work" ? "default" : "outline"}
+            onClick={() => setActiveTab("work")}
+            className="min-w-[100px]"
+          >
+            Work
+          </Button>
+          <Button
+            variant={activeTab === "studies" ? "default" : "outline"}
+            onClick={() => setActiveTab("studies")}
+            className="min-w-[100px]"
+          >
+            Studies
+          </Button>
+        </div>
+
         <div className="relative max-w-3xl mx-auto">
           <div className="timeline-line" />
           {experiences.map((exp, index) => (

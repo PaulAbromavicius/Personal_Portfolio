@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #1A1F2C 0%, #1a1f2c 100%);
+  background: black;
   color: #ffffff;
   min-height: 100vh;
 }
@@ -18,7 +18,7 @@ body {
 }
 
 .card-gradient {
-  background: linear-gradient(135deg, rgba(155, 135, 245, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
