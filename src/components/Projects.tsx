@@ -1,23 +1,27 @@
+import portfolio from "../Images/portfolio.png";
+
+
 const projects = [
   {
     title: "Zen Vouch",
     description: "Zen Vouch is a platform that allows users manage their business vouchers.",
     image: "/lovable-uploads/e0706aa7-9630-4ea0-8bb8-3eedd39196cd.png",
-    link: "https://rafaelamaral.dev/projects/zen-vouch",
+    link: "https://emojibly.com",
     tags: ["Next.JS", "React", "Tailwindcss", "shadcn/ui", "Clerk", "Supabase"]
   },
   {
     title: "Personal Portfolio",
     description: "This is my personal portfolio, where I showcase my projects and skills.",
-    image: "/lovable-uploads/dc0ca304-55ea-4731-8501-17a4c9b90570.png",
+    image: portfolio,
     link: "https://rafaelamaral.dev",
-    tags: ["Next.JS", "React", "Tailwindcss", "shadcn/ui"]
+    tags: ["Node.JS", "React", "Tailwindcss"]
   }
 ];
 
 const Projects = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-black via-black/95 to-black/90">
+    
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-center pt-20 bg-[#021022] text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4 text-white">PROJECTS</h2>

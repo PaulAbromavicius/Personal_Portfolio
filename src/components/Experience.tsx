@@ -1,105 +1,109 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
+import northumbria from '../Images/northumbria.png'; 
+import nkkm from '../Images/nkkm.png';
+import emojibly from '../Images/emojibly.png';
 
 type ExperienceType = "work" | "studies";
 
 const workExperiences = [
   {
-    company: "Digital Perspective",
+    company: "Working on projects",
     role: "Frontend Web Developer",
-    period: "Jan 2023 - Present",
-    description: "Web Design; Web Development; Wordpress + Elementor.",
-    logo: "/placeholder.svg"
+    period: "Sept 2024 - Present",
+    description: "Web Design, Web Development",
+    logo: emojibly,
   },
-  {
-    company: "Bitcliq",
-    role: "Software Developer - Internship",
-    period: "Jan 2020 - Mar 2020",
-    description: "Mobile Development (Parque D.Carlos I App - Course Final Project [Grade:20/20]); Web Development; Functional testing some company's apps (Lota Digital, Caldas da Rainha - City Guide).",
-    logo: "/placeholder.svg"
-  },
-  {
-    company: "Bitcliq",
-    role: "Software Developer - Internship",
-    period: "Apr 2019 - Jul 2019",
-    description: "Web Development; Functional testing some company's apps (Lota Digital, Caldas da Rainha - City Guide).",
-    logo: "/placeholder.svg"
-  }
+  
 ];
 
 const studyExperiences = [
   {
-    company: "Polytechnic of Leiria",
+    company: "Northumbría University",
     role: "B.Sc. in Computer Science",
-    period: "Sep 2020 - Jul 2025",
-    description: "Computer Science Degree",
-    logo: "/placeholder.svg"
+    period: "Sep 2020 - Jul 2024",
+    description: "Computer Science Degree with game development",
+    logo: northumbria,
   },
   {
-    company: "Zagreb University of Applied Sciences",
-    role: "B.Sc. in Computer Science",
-    period: "Mar 2022 - Jul 2022",
-    description: "Computer Science Exchange Program",
-    logo: "/placeholder.svg"
+    company: "Nikalojos Kazakovos computer science school",
+    role: "Certificate of finishing the course",
+    period: "Sept 2017 - Jul 2020",
+    description: "Computer Science school",
+    logo: nkkm,
   },
-  {
-    company: "Escola Secundária Raul Proença",
-    role: "Technical Professional of Management and Programming of Computer Systems",
-    period: "Sep 2017 - Jul 2020",
-    description: "Technical Professional Course",
-    logo: "/placeholder.svg"
-  }
 ];
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState<ExperienceType>("work");
+  const [activeTab, setActiveTab] = useState<ExperienceType>("studies");
 
   const experiences = activeTab === "work" ? workExperiences : studyExperiences;
 
   return (
-    <section className="py-20 bg-black">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-white">Experience</h2>
-        
-        <div className="flex gap-4 mb-8 justify-center">
-          <Button
-            variant={activeTab === "work" ? "default" : "outline"}
-            onClick={() => setActiveTab("work")}
-            className="min-w-[100px]"
-          >
-            Work
-          </Button>
-          <Button
-            variant={activeTab === "studies" ? "default" : "outline"}
-            onClick={() => setActiveTab("studies")}
-            className="min-w-[100px]"
-          >
-            Studies
-          </Button>
-        </div>
+    <div className="min-h-screen flex flex-col justify-center items-center text-center pt-20 bg-[#021022] text-white">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 pointer-events-none z-10"></div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="timeline-line" />
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="relative pl-16 pb-12 animate-fade-in"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className="absolute left-0 top-2 w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
-                <img src={exp.logo} alt={exp.company} className="w-6 h-6" />
-              </div>
-              <div className="card-gradient rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-1">{exp.company}</h3>
-                <p className="text-white/60 mb-2">{exp.role}</p>
-                <p className="text-sm text-white/40 mb-4">{exp.period}</p>
-                <p className="text-white/80">{exp.description}</p>
-              </div>
+      <section className="relative w-full">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-8 text-center">Experience</h2>
+
+          {/* Toggle Button */}
+          <div className="flex justify-center mb-8 w-[600px] mx-auto">
+            <div className="flex rounded-full w-full bg-white/10 border border-white/20 overflow-hidden">
+              <button
+                onClick={() => setActiveTab("work")}
+                className={`flex-1 px-6 py-2 text-sm font-medium rounded-l-full ${
+                  activeTab === "work"
+                    ? "bg-white text-black"
+                    : "bg-white/10 text-white"
+                } hover:bg-white/20`}
+              >
+                Work
+              </button>
+              <button
+                onClick={() => setActiveTab("studies")}
+                className={`flex-1 px-6 py-2 text-sm font-medium rounded-r-full ${
+                  activeTab === "studies"
+                    ? "bg-white text-black"
+                    : "bg-white/10 text-white"
+                } hover:bg-white/20`}
+              >
+                Studies
+              </button>
             </div>
-          ))}
+          </div>
+
+          {/* Timeline with Border */}
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-8 top-0 h-full w-[2px] bg-white/20 z-0"></div>
+            <div
+              className={`border border-white/40 rounded-lg p-6 ${
+                activeTab === "work" ? "bg-black/40" : "bg-black/40"
+              }`}
+            >
+              {experiences.map((exp, index) => (
+                <div key={index} className="relative pl-16 pb-12 flex items-start z-10">
+                  {/* Timeline Icon */}
+                  <div className="absolute -left-6 top-4 flex items-center justify-center rounded-full bg-white">
+
+                    <img src={exp.logo} alt="Northumbria" className="w-12 h-12 sm:w-16 sm:h-16 rounded-full" />
+                  </div>
+
+                  {/* Fixed-Size Card */}
+                  <div className="bg-black/60 border border-white/10 rounded-lg p-6 shadow-md w-[650px] h-[200px]">
+                    <h3 className="text-xl font-semibold mb-2">{exp.company}</h3>
+                    <p className="text-white/70 mb-2">{exp.role}</p>
+                    <p className="text-sm text-white/50 mb-4">{exp.period}</p>
+                    <p className="text-white/80 text-sm">{exp.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
