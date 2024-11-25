@@ -1,13 +1,13 @@
 import portfolio from "../Images/portfolio.png";
-
+import emojiblyLandingPage from "../Images/emojiblyLandingPage.png";
 
 const projects = [
   {
-    title: "Zen Vouch",
-    description: "Zen Vouch is a platform that allows users manage their business vouchers.",
-    image: "/lovable-uploads/e0706aa7-9630-4ea0-8bb8-3eedd39196cd.png",
+    title: "Emojibly(coming soon)",
+    description: "This website creates an embedded feedback widget that clients can integrate into their websites. The widget allows users to provide feedback on the website's content using emojis.",
+    image: emojiblyLandingPage,
     link: "https://emojibly.com",
-    tags: ["Next.JS", "React", "Tailwindcss", "shadcn/ui", "Clerk", "Supabase"]
+    tags: ["Node.JS", "Svelte", "Tailwindcss", "TypseScript"]
   },
   {
     title: "Personal Portfolio",
