@@ -14,7 +14,6 @@ const workExperiences = [
     description: "Web Design, Web Development",
     logo: emojibly,
   },
-  
 ];
 
 const studyExperiences = [
@@ -40,9 +39,51 @@ const Experience = () => {
   const experiences = activeTab === "work" ? workExperiences : studyExperiences;
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center pt-20 bg-[#021022] text-white">
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 pointer-events-none z-10"></div>
+    <div className="min-h-screen flex flex-col justify-center items-center text-center pt-20 pb-20 bg-[#021022] text-white relative">
+      {/* First Left Gradient */}
+      <div
+        className="absolute -left-64 top-0 w-[570px] h-[264px] rounded-full"
+        style={{
+          background: `linear-gradient(217deg, #6a0dad, rgba(255, 0, 255, 0) 70.71%), 
+                       linear-gradient(127deg, #9b59b6, rgba(128, 0, 128, 0) 70.71%), 
+                       linear-gradient(336deg, #4b0082, rgba(75, 0, 130, 0) 70.71%)`,
+          filter: "blur(130px)",
+        }}
+      ></div>
+
+      {/* Second Left Gradient */}
+      <div
+        className="absolute -left-72 bottom-0 w-[570px] h-[264px] rounded-full"
+        style={{
+          background: `linear-gradient(217deg, #ff6347, rgba(255, 0, 255, 0) 70.71%), 
+                       linear-gradient(127deg, #ff1493, rgba(128, 0, 128, 0) 70.71%), 
+                       linear-gradient(336deg, #8a2be2, rgba(75, 0, 130, 0) 70.71%)`,
+          filter: "blur(130px)",
+        }}
+      ></div>
+
+      {/* Right Gradient */}
+      <div
+        className="absolute -right-64 top-20 w-[570px] h-[264px] rounded-full"
+        style={{
+          background: `linear-gradient(217deg, #6a0dad, rgba(255, 0, 255, 0) 70.71%), 
+                       linear-gradient(127deg, #9b59b6, rgba(128, 0, 128, 0) 70.71%), 
+                       linear-gradient(336deg, #4b0082, rgba(75, 0, 130, 0) 70.71%)`,
+          filter: "blur(130px)",
+        }}
+      >
+ </div>
+
+      <div
+  className="absolute -right-64 bottom-20 w-[570px] h-[264px] rounded-full"
+  style={{
+    background: `linear-gradient(217deg, #ff6347, rgba(255, 99, 71, 0) 70.71%), 
+                 linear-gradient(127deg, #ff4500, rgba(255, 69, 0, 0) 70.71%), 
+                 linear-gradient(336deg, #ff1493, rgba(255, 20, 147, 0) 70.71%)`,
+    filter: "blur(130px)",
+  }}
+></div>
+
 
       <section className="relative w-full">
         <div className="container mx-auto px-4">
@@ -86,8 +127,11 @@ const Experience = () => {
                 <div key={index} className="relative pl-16 pb-12 flex items-start z-10">
                   {/* Timeline Icon */}
                   <div className="absolute -left-6 top-4 flex items-center justify-center rounded-full bg-white">
-
-                    <img src={exp.logo} alt="Northumbria" className="w-12 h-12 sm:w-16 sm:h-16 rounded-full" />
+                    <img
+                      src={exp.logo}
+                      alt="Northumbria"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full"
+                    />
                   </div>
 
                   {/* Fixed-Size Card */}

@@ -13,7 +13,7 @@ const projects = [
     title: "Personal Portfolio",
     description: "This is my personal portfolio, where I showcase my projects and skills.",
     image: portfolio,
-    link: "https://rafaelamaral.dev",
+    link: "https://abromavicius.dev",
     tags: ["Node.JS", "React", "Tailwindcss"]
   }
 ];
@@ -21,7 +21,7 @@ const projects = [
 const Projects = () => {
   return (
     
-    <section className="relative min-h-screen flex flex-col justify-center items-center text-center pt-20 bg-[#021022] text-white">
+    <section className=" min-h-screen flex flex-col justify-center items-center text-center pt-20 bg-[#021022] text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4 text-white">PROJECTS</h2>

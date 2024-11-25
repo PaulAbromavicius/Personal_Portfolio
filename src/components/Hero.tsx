@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import img from '../Images/img.jpg'; // Correct relative path
-
+import Resume from '../Images/Pauliaus CV.pdf'
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex flex-col justify-center items-center text-center pt-20 bg-[#021022] text-white">
@@ -34,22 +34,40 @@ const Hero = () => {
         </span>
       </div>
       <div className="relative z-10 flex justify-center gap-4 mb-8">
-        <Button variant="outline" size="icon" className="rounded-full bg-white/10 hover:bg-white/20">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="rounded-full bg-white/10 hover:bg-white/20"
+          onClick={() => window.open('https://github.com/PaulAbromavicius', '_blank')}
+        >
           <Github className="w-5 h-5 text-white" />
         </Button>
-        <Button variant="outline" size="icon" className="rounded-full bg-white/10 hover:bg-white/20">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="rounded-full bg-white/10 hover:bg-white/20"
+          onClick={() => window.open('https://www.linkedin.com/in/paulius-abromavi%C4%8Dius-5bb44b20a/', '_blank')}
+        >
           <Linkedin className="w-5 h-5 text-white" />
         </Button>
-        <Button variant="outline" size="icon" className="rounded-full bg-white/10 hover:bg-white/20">
-          <Twitter className="w-5 h-5 text-white" />
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="rounded-full bg-white/10 hover:bg-white/20"
+          onClick={() => window.open(Resume, '_blank')}
+        >
+          <FileText className="w-5 h-5 text-white" />
         </Button>
-        <Button variant="outline" size="icon" className="rounded-full bg-white/10 hover:bg-white/20">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="rounded-full bg-white/10 hover:bg-white/20"
+          onClick={() => window.open('mailto:pauliusabr@gmail.com')}
+        >
           <Mail className="w-5 h-5 text-white" />
         </Button>
       </div>
-      <Button className="relative z-10 bg-[#00A3FF] hover:bg-[#00A3FF]/90 px-6 py-3 rounded-full">
-        Contact me
-      </Button>
+      
     </div>
   );
 };
