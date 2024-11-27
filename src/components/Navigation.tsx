@@ -16,9 +16,9 @@ const Navigation = () => {
             <Link to="/projects" className="text-white/80 hover:text-white transition-colors">
               Projects
             </Link>
-            <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
+            <a href="mailto:your-email@example.com" className="text-white/80 hover:text-white transition-colors">
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       </div>
