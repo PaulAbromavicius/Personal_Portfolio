@@ -61,7 +61,7 @@ const About = () => {
       <div className="relative z-10 max-w-xl px-4">
         <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#07d400] to-[#00b4d8]">Hi, I'm Paulius Abromavičius.</h1>
         <p className="text-lg">
-          A Fronend developer with experience in web and mobile development. I enjoy working across all stages of a project, from concept to delivery, and I'm always looking for ways to improve both my technical skills and the user experience.
+          A Frontend developer with experience in web and mobile development. I enjoy working across all stages of a project, from concept to delivery, and I'm always looking for ways to improve both my technical skills and the user experience.
         </p>
       </div>
       <section className='pt-10'>
